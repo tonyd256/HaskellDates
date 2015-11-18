@@ -10,7 +10,7 @@ let endDay = addDays 15 now
 
 
 let allDays = takeWhile (<=endDay) $ (`addDays` startDay) <$> [0..]
-let validDays = filter (((flip elem) $ daysOfWeek event) . dayOfWeek) allDays
+let validDays = filter ((`elem` daysOfWeek event) . dayOfWeek) allDays
 
 length validDays
 
